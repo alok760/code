@@ -33,26 +33,18 @@ void print(TreeNode<int>* root) {
 }
 
 bool findx(TreeNode<int> *root,int x)
-{  bool ans;
-    if(root==NULL)
-    {
-        return false;
-    }
+{  
+    bool ans;
+    if(root==NULL)       return false;
+
     if(root->data==x)
-    {
-        return true;
-    }
-    for(int i=0; i<root->numChild(); i++)
-        { ans=findx(root->getChild(i),x);
-
-
+         return true;
+    for(int i=0; i<root->numChild(); i++){
+        ans=findx(root->getChild(i),x);
          if(x==root->getChild(i)->data)
-            {
-                return true;
-                  }
+             return true;
         }
         return false;
-
  }
 int main() {
     int x;
@@ -60,10 +52,7 @@ int main() {
     cin>>x;
     TreeNode<int>* root = takeInput();
     print(root);
-
-    bool ans =findx(root,x);
-
-cout<<endl<<ans;
+    bool ans =findx(root,x);cout<<endl<<ans;
 }
 
 
