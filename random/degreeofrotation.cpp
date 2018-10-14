@@ -30,3 +30,4 @@ degree(int a[],int n)
         degree(a,n);
 
     }
+//end
