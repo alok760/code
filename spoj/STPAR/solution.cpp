@@ -2,26 +2,29 @@
 using namespace std;
 int main()
 {
-  int n;
+  long int n;
   cin>>n;
   while(n!=0)
   {
-    int count = 1, ocount = 69,temp;
-    for(int i=0;i<n;i++)
+    long int count = 1, side = -1,temp;
+    for(long int i=0;i<n;i++)
       {
         cin>>temp;
-        if(temp == count)
+        if(temp == count || side == count+1)
+        {
           count++;
+          side = -1;
+        }
 
-        else if(temp > ocount)
+        else if(temp > side && side != -1)
         {
           cout<<"no"<<endl;
           break;
         }
         else
-          ocount=temp;
+          side=temp;
 
-        cout<<"debug : "<<temp<<" "<<i<<" "<<count<<" "<<ocount<<endl;
+        //cout<<"debug : "<<temp<<" "<<i+1<<" "<<count<<" "<<side<<endl;
 
         if(i==n-1)
           cout<<"yes"<<endl;
@@ -30,6 +33,6 @@ int main()
       cin>>n;
 
   }
-  cout<<"end";
+  //cout<<"end";
   return 0;
 }
