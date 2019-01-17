@@ -6,7 +6,7 @@ int main()
   cin>>n;
   while(n!=0)
   {
-    long int count = 1, side = -1,temp;
+    long int count = 1, side = -1,temp,t=0;
     for(long int i=0;i<n;i++)
       {
         cin>>temp;
@@ -17,17 +17,14 @@ int main()
         }
 
         else if(temp > side && side != -1)
-        {
-          cout<<"no"<<endl;
-          break;
-        }
+          t=1;
         else
           side=temp;
 
         //cout<<"debug : "<<temp<<" "<<i+1<<" "<<count<<" "<<side<<endl;
 
         if(i==n-1)
-          cout<<"yes"<<endl;
+          cout<<(t?"no":"yes")<<endl;
       }
 
       cin>>n;
